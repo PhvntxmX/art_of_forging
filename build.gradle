@@ -142,7 +142,7 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:tetra-289712:5930559")
+    implementation fg.deobf("curse.maven:tetra-289712:6096160")
     implementation fg.deobf("curse.maven:mutil-351914:4824501")
     runtimeOnly fg.deobf("curse.maven:jei-238222:5101366")
 
@@ -153,7 +153,7 @@ dependencies {
 
     // Soul Fire'd
     //implementation "it.crystalnest:soul-fire-d-common:$minecraft_version-$soul_fire_d_version"
-    implementation fg.deobf("curse.maven:soul-fire-d-662413:5454323")
+    //implementation fg.deobf("curse.maven:soul-fire-d-662413:6100253")
     implementation fg.deobf("it.crystalnest:cobweb-forge:$minecraft_version-$cobweb_version")
     implementation fg.deobf("it.crystalnest:soul-fire-d-forge:$minecraft_version-$soul_fire_d_version")
 

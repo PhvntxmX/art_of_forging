@@ -10,7 +10,6 @@ import se.mickelus.tetra.gui.GuiModuleOffsets;
 import se.mickelus.tetra.items.modular.ModularItem;
 import se.mickelus.tetra.module.ItemModule;
 import se.mickelus.tetra.module.ItemUpgradeRegistry;
-import se.mickelus.tetra.module.schematic.RemoveSchematic;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import java.util.Arrays;
