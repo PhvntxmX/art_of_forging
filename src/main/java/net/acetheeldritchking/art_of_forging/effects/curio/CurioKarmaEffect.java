@@ -94,61 +94,17 @@ public class CurioKarmaEffect implements ICurioItem {
                         if (level > 0 && !player.level().isClientSide()) {
                             player.getCapability(PlayerKarmaProvider.PLAYER_KARMA).ifPresent(karma -> {
                                 // Do stuff here
-                                switch (karma.getKarma()) {
-                                    case -5 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
-                                                4, true, true, true));
-                                        break;
-                                    }
-                                    case -4 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
-                                                3, true, true, true));
-                                        break;
-                                    }
-                                    case -3 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
-                                                2, true, true, true));
-                                        break;
-                                    }
-                                    case -2 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
-                                                1, true, true, true));
-                                        break;
-                                    }
-                                    case -1 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
-                                                0, true, true, true));
-                                        break;
-                                    }
-                                    case 0 -> {
-                                        player.removeEffect(MobEffects.UNLUCK);
-                                        player.removeEffect(MobEffects.LUCK);
-                                    }
-                                    case 1 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
-                                                0, true, true, true));
-                                        break;
-                                    }
-                                    case 2 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
-                                                1, true, true, true));
-                                        break;
-                                    }
-                                    case 3 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
-                                                2, true, true, true));
-                                        break;
-                                    }
-                                    case 4 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
-                                                3, true, true, true));
-                                        break;
-                                    }
-                                    case 5 -> {
-                                        player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
-                                                4, true, true, true));
-                                        break;
-                                    }
+                                if (karma.getKarma() < 0) {
+                                    player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, level * 20,
+                                    Math.abs(karma.getKarma())-1, true, true, true));
+                                }
+                                else if (karma.getKarma() == 0) {
+                                    player.removeEffect(MobEffects.UNLUCK);
+                                    player.removeEffect(MobEffects.LUCK);
+                                }
+                                else if (karma.getKarma() > 0) {
+                                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, level * 20,
+                                    karma.getKarma()-1, true, true, true));
                                 }
                             });
                         }
