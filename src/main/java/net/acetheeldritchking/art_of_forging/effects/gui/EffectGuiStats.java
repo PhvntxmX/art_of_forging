@@ -30,9 +30,9 @@ public class EffectGuiStats {
     public static final ItemEffect evokingMaw =
             ItemEffect.get(ArtOfForging.MOD_ID + ":evoking_maw");
     public static final String evokingMawName =
-            ArtOfForging.MOD_ID + ".effect.evokingmaw.name";
+            ArtOfForging.MOD_ID + ".effect.evoking_maw.name";
     public static final String evokingMawTooltip =
-            ArtOfForging.MOD_ID + ".effect.evokingmaw.tooltip";
+            ArtOfForging.MOD_ID + ".effect.evoking_maw.tooltip";
 
     // Jousting
     public static final ItemEffect dismountingEffect =
